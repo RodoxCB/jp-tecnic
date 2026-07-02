@@ -36,11 +36,6 @@
       "description": "Celular descarregando rápido demais? Colocamos bateria nova pra você voltar a usar tranquilo."
     },
     {
-      "icon": "cpu",
-      "title": "Reparo em placa",
-      "description": "Problema por dentro do aparelho? Olhamos com calma, explicamos o que achamos e consertamos direitinho."
-    },
-    {
       "icon": "plug",
       "title": "Problemas de carregamento",
       "description": "Não carrega ou só carrega de um jeito? Descobrimos se é conector, cabo ou placa e resolvemos."
@@ -135,7 +130,7 @@
   "faq": [
     {
       "question": "Quanto tempo demora o conserto?",
-      "answer": "Depende do que precisa ser feito. Troca de tela e bateria, na maioria das vezes, fica pronta no mesmo dia. Reparo em placa pode levar de 1 a 3 dias úteis. A gente te avisa o prazo certinho no orçamento."
+      "answer": "Depende do que precisa ser feito. Troca de tela e bateria, na maioria das vezes, fica pronta no mesmo dia. A gente te avisa o prazo certinho no orçamento."
     },
     {
       "question": "Tem garantia?",

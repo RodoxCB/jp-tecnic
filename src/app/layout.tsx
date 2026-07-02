@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `${content.site.name} | Conserto de celular em Domingos Martins`,
     description:
-      "Conserto de celular em Domingos Martins, Paraju e Marechal Floriano. Troca de tela, bateria, placa e muito mais. Chama no WhatsApp que a gente te ajuda.",
+      "Conserto de celular em Domingos Martins, Paraju e Marechal Floriano. Troca de tela, bateria e muito mais. Chama no WhatsApp que a gente te ajuda.",
     keywords: [
       "assistência técnica de celular em Domingos Martins",
       "conserto de celular Paraju",
