@@ -16,12 +16,12 @@ function withDefaultNav(content: SiteContent): SiteContent {
   return {
     ...content,
     navLinks: [
-      { href: "#inicio", label: "Início" },
-      { href: "#servicos", label: "Serviços" },
-      { href: "#como-funciona", label: "Como funciona" },
-      { href: "#avaliacoes", label: "Avaliações" },
-      { href: "#galeria", label: "Galeria" },
-      { href: "#contato", label: "Contato" }
+      { href: "/#inicio", label: "Início" },
+      { href: "/#servicos", label: "Serviços" },
+      { href: "/#como-funciona", label: "Como funciona" },
+      { href: "/#avaliacoes", label: "Avaliações" },
+      { href: "/#galeria", label: "Galeria" },
+      { href: "/#contato", label: "Contato" }
     ]
   };
 }

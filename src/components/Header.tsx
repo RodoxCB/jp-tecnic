@@ -42,20 +42,20 @@ export function Header({ siteName, links, whatsappNumber, whatsappMessage }: Hea
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-        <a href="#inicio" className="flex items-center gap-2" onClick={closeMenu}>
+        <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
           <BrandMark />
           <span className="text-lg font-bold text-white sm:text-xl">{siteName}</span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-zinc-300 transition hover:text-[#25D366]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <Link
             href="/loja"
@@ -81,14 +81,14 @@ export function Header({ siteName, links, whatsappNumber, whatsappMessage }: Hea
         <div className="border-t border-white/10 bg-black px-4 py-6 lg:hidden">
           <nav className="flex flex-col gap-4">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-base font-medium text-zinc-200"
                 onClick={closeMenu}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Link href="/loja" className="text-base font-medium text-zinc-200" onClick={closeMenu}>
               Loja

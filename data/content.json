@@ -10,6 +10,14 @@
     "whatsappMessage": "Oi! Vi o site da JP Tecnic e preciso de uma ajuda. Meu celular está assim:",
     "phoneDisplay": "(27) 99716-9987"
   },
+  "navLinks": [
+    { "href": "/#inicio", "label": "Início" },
+    { "href": "/#servicos", "label": "Serviços" },
+    { "href": "/#como-funciona", "label": "Como funciona" },
+    { "href": "/#avaliacoes", "label": "Avaliações" },
+    { "href": "/#galeria", "label": "Galeria" },
+    { "href": "/#contato", "label": "Contato" }
+  ],
   "regions": [
     "Domingos Martins",
     "Paraju",
