@@ -1,10 +1,12 @@
 import { Instagram } from "lucide-react";
-import Image from "next/image";
-import { GALLERY_IMAGES, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
+import { fetchInstagramPosts } from "@/lib/instagram";
 import { FadeIn } from "./FadeIn";
 import { SectionTitle } from "./SectionTitle";
 
-export function Gallery() {
+export async function Gallery() {
+  const images = await fetchInstagramPosts(12);
+
   return (
     <section id="galeria" className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
@@ -15,22 +17,39 @@ export function Gallery() {
           />
         </FadeIn>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-          {GALLERY_IMAGES.map((image, index) => (
-            <FadeIn key={image.src} delay={index * 80}>
-              <div className="group relative aspect-square overflow-hidden rounded-2xl bg-zinc-900">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition group-hover:opacity-100" />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        {images.length > 0 ? (
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+            {images.map((image, index) => (
+              <FadeIn key={image.id} delay={index * 80}>
+                <a
+                  href={image.permalink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block aspect-square overflow-hidden rounded-2xl bg-zinc-900"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    loading={index < 4 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/10 to-transparent p-3 opacity-0 transition group-hover:opacity-100">
+                    <span className="text-xs font-medium text-white sm:text-sm">Ver no Instagram</span>
+                  </div>
+                </a>
+              </FadeIn>
+            ))}
+          </div>
+        ) : (
+          <FadeIn>
+            <p className="mt-10 text-center text-zinc-400">
+              Não foi possível carregar as fotos agora. Acesse nosso Instagram para ver os serviços
+              realizados.
+            </p>
+          </FadeIn>
+        )}
 
         <FadeIn>
           <div className="mt-10 text-center">

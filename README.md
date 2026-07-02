@@ -19,7 +19,7 @@ npm run dev
 Configure o WhatsApp em `.env.local`:
 
 ```
-NEXT_PUBLIC_WHATSAPP_NUMBER=5527999999999
+NEXT_PUBLIC_WHATSAPP_NUMBER=5527997169987
 ```
 
 ## Deploy

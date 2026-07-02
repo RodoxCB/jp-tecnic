@@ -2,7 +2,7 @@ export const SITE = {
   name: "JP Tecnic",
   tagline: "Assistência Técnica de Celulares",
   instagram: "https://www.instagram.com/jp_tecnic/",
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5527999999999",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5527997169987",
   whatsappMessage:
     "Olá! Vim pelo site da JP Tecnic. Meu celular está com o seguinte problema:",
   schedule: "Seg a Sáb: 8h às 18h",
@@ -90,11 +90,3 @@ export const FAQ_ITEMS = [
   },
 ] as const;
 
-export const GALLERY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600&h=600&fit=crop", alt: "Troca de tela de smartphone" },
-  { src: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=600&h=600&fit=crop", alt: "Reparo de placa de celular" },
-  { src: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=600&fit=crop", alt: "Smartphone consertado" },
-  { src: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600&h=600&fit=crop", alt: "Troca de bateria" },
-  { src: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&h=600&fit=crop", alt: "Diagnóstico técnico" },
-  { src: "https://images.unsplash.com/photo-1574944985070-8f9484d89672?w=600&h=600&fit=crop", alt: "Assistência técnica mobile" },
-] as const;

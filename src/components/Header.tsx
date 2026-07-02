@@ -1,7 +1,8 @@
 "use client";
 
-import { Menu, Smartphone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { BrandMark } from "@/components/BrandMark";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 import { WhatsAppButton } from "./WhatsAppButton";
 
@@ -32,9 +33,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         <a href="#inicio" className="flex items-center gap-2" onClick={closeMenu}>
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#25D366]">
-            <Smartphone size={20} className="text-white" />
-          </div>
+          <BrandMark />
           <span className="text-lg font-bold text-white sm:text-xl">{SITE.name}</span>
         </a>
 
