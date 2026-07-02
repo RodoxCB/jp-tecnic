@@ -198,56 +198,60 @@ export function AdminDashboard({ initialContent }: AdminDashboardProps) {
   }
 
   return (
-    <div className="min-h-screen bg-black px-4 py-8 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-bold text-white">Painel administrativo JP Tecnic</h1>
-            <p className="mt-1 text-sm text-zinc-400">Edite textos, galeria e aparelhos da loja.</p>
+    <div className="min-h-screen bg-black">
+      <div className="sticky top-0 z-50 border-b border-zinc-800 bg-black/95 backdrop-blur-md">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h1 className="text-xl font-bold text-white sm:text-2xl">Painel administrativo JP Tecnic</h1>
+              <p className="mt-1 text-sm text-zinc-400">Edite textos, galeria e aparelhos da loja.</p>
+            </div>
+            <div className="flex shrink-0 gap-2">
+              <button
+                type="button"
+                onClick={saveContentChanges}
+                disabled={saving}
+                className="rounded-lg bg-[#25D366] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#20bd5a] disabled:opacity-60"
+              >
+                {saving ? "Salvando..." : "Salvar alterações"}
+              </button>
+              <button
+                type="button"
+                onClick={logout}
+                className="rounded-lg border border-zinc-700 px-4 py-2 text-sm text-zinc-300 hover:border-zinc-500"
+              >
+                Sair
+              </button>
+            </div>
           </div>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={saveContentChanges}
-              disabled={saving}
-              className="rounded-lg bg-[#25D366] px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#20bd5a] disabled:opacity-60"
-            >
-              {saving ? "Salvando..." : "Salvar tudo"}
-            </button>
-            <button
-              type="button"
-              onClick={logout}
-              className="rounded-lg border border-zinc-700 px-4 py-2 text-sm text-zinc-300 hover:border-zinc-500"
-            >
-              Sair
-            </button>
+
+          {message && (
+            <p className="mt-3 rounded-lg border border-[#25D366]/40 bg-[#25D366]/10 px-3 py-2 text-sm text-[#25D366]">
+              {message}
+            </p>
+          )}
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {TABS.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setTab(item.id)}
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                  tab === item.id
+                    ? "bg-[#25D366] text-black"
+                    : "border border-zinc-700 text-zinc-300 hover:border-[#25D366]/50 hover:text-[#25D366]"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         </div>
+      </div>
 
-        {message && (
-          <p className="mt-4 rounded-lg border border-[#25D366]/40 bg-[#25D366]/10 px-3 py-2 text-sm text-[#25D366]">
-            {message}
-          </p>
-        )}
-
-        <div className="mt-6 flex flex-wrap gap-2 border-b border-zinc-800 pb-4">
-          {TABS.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => setTab(item.id)}
-              className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
-                tab === item.id
-                  ? "bg-[#25D366] text-black"
-                  : "border border-zinc-700 text-zinc-300 hover:border-[#25D366]/50 hover:text-[#25D366]"
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-8 space-y-6">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <div className="space-y-6">
           {tab === "geral" && (
             <>
               <AdminSection title="Informações principais do site">
@@ -918,6 +922,17 @@ export function AdminDashboard({ initialContent }: AdminDashboardProps) {
               </AdminSection>
             </>
           )}
+        </div>
+
+        <div className="mt-10 flex justify-end border-t border-zinc-800 pt-6">
+          <button
+            type="button"
+            onClick={saveContentChanges}
+            disabled={saving}
+            className="rounded-lg bg-[#25D366] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#20bd5a] disabled:opacity-60"
+          >
+            {saving ? "Salvando..." : "Salvar alterações"}
+          </button>
         </div>
       </div>
     </div>

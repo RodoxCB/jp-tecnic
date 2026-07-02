@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { SiteChrome } from "@/components/SiteChrome";
 import { getContent } from "@/lib/content";
 import "./globals.css";
 
@@ -48,18 +46,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     <html lang="pt-BR" className={inter.variable}>
       <body className="font-sans">
         <JsonLd content={content} />
-        <Header
-          siteName={content.site.name}
-          links={content.navLinks}
-          whatsappNumber={content.contact.whatsappNumber}
-          whatsappMessage={content.contact.whatsappMessage}
-        />
-        <main>{children}</main>
-        <Footer content={content} />
-        <WhatsAppFloat
-          whatsappNumber={content.contact.whatsappNumber}
-          whatsappMessage={content.contact.whatsappMessage}
-        />
+        <SiteChrome content={content}>{children}</SiteChrome>
       </body>
     </html>
   );
