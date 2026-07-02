@@ -14,7 +14,7 @@ alwaysApply: true
 
 1. **Sempre trabalhar em `staging`** — checkout em `staging` antes de editar ou commitar.
 2. **Nunca commitar em `main` por iniciativa própria** — só após o usuário validar o preview e aprovar explicitamente.
-3. **Ordem do fluxo:** alterações → commit em `staging` → push → usuário valida preview → pedir aprovação → merge/push em `main`.
+3. **Ordem do fluxo:** alterações → commit em `staging` → push → **verificar deploy** (Vercel CLI + status no GitHub) → usuário valida preview → pedir aprovação → merge/push em `main`.
 4. Se o usuário pedir deploy ou commit, assumir `staging` salvo indicação contrária.
 5. Antes de merge em `main`, confirmar: *"O preview em staging está ok? Posso fazer merge para main (production)?"*
 
@@ -25,6 +25,9 @@ git checkout staging
 git add .
 git commit -m "mensagem"
 git push origin staging
+# verificar deploy:
+vercel ls jp-tecnic --scope vdveiculos
+gh api repos/RodoxCB/jp-tecnic/commits/$(git rev-parse HEAD)/status --jq '.state'
 # após aprovação:
 git checkout main
 git merge staging
