@@ -1,0 +1,33 @@
+---
+description: Fluxo de branches e deploy Vercel (staging → main)
+alwaysApply: true
+---
+
+# Deploy e branches — JP Tecnic
+
+## Branches
+
+- `staging` → Preview na Vercel (desenvolvimento)
+- `main` → Production na Vercel (produção)
+
+## Regras obrigatórias
+
+1. **Sempre trabalhar em `staging`** — checkout em `staging` antes de editar ou commitar.
+2. **Nunca commitar em `main` por iniciativa própria** — só após o usuário validar o preview e aprovar explicitamente.
+3. **Ordem do fluxo:** alterações → commit em `staging` → push → usuário valida preview → pedir aprovação → merge/push em `main`.
+4. Se o usuário pedir deploy ou commit, assumir `staging` salvo indicação contrária.
+5. Antes de merge em `main`, confirmar: *"O preview em staging está ok? Posso fazer merge para main (production)?"*
+
+## Comandos típicos
+
+```bash
+git checkout staging
+git add .
+git commit -m "mensagem"
+git push origin staging
+# após aprovação:
+git checkout main
+git merge staging
+git push origin main
+git checkout staging
+```
