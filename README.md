@@ -1,6 +1,6 @@
 # JP Tecnic
 
-Projeto JP Tecnic.
+Site institucional da JP Tecnic — assistência técnica de celulares.
 
 ## Branches
 
@@ -8,6 +8,19 @@ Projeto JP Tecnic.
 |--------|----------|
 | `staging` | Preview (Vercel) — branch de trabalho |
 | `main` | Production (Vercel) — só após validação |
+
+## Desenvolvimento
+
+```bash
+npm install
+npm run dev
+```
+
+Configure o WhatsApp em `.env.local`:
+
+```
+NEXT_PUBLIC_WHATSAPP_NUMBER=5527999999999
+```
 
 ## Deploy
 
