@@ -1,5 +1,14 @@
 # Deploy na Vercel — JP Tecnic
 
+## URLs
+
+| Ambiente | URL |
+|----------|-----|
+| **Production** (`main`) | https://jp-tecnic.vercel.app |
+| **Preview** (`staging`) | URL por deploy (ex: `jp-tecnic-git-staging-vdveiculos.vercel.app`) |
+| **GitHub** | https://github.com/RodoxCB/jp-tecnic |
+| **Vercel Dashboard** | https://vercel.com/vdveiculos/jp-tecnic |
+
 ## Branches e ambientes
 
 | Branch | Ambiente Vercel | Uso |
