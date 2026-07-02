@@ -4,33 +4,38 @@ import {
   MapPin,
   Search,
   Zap,
-  type LucideIcon,
+  type LucideIcon
 } from "lucide-react";
-import { COPY, DIFFERENTIALS } from "@/lib/constants";
-import { FadeIn } from "./FadeIn";
-import { SectionTitle } from "./SectionTitle";
+import type { SiteContent } from "@/lib/types";
+import { FadeIn } from "@/components/FadeIn";
+import { SectionTitle } from "@/components/SectionTitle";
+
+type DifferentialsProps = {
+  title: string;
+  differentials: SiteContent["differentials"];
+};
 
 const iconMap: Record<string, LucideIcon> = {
   zap: Zap,
   "badge-dollar-sign": BadgeDollarSign,
   search: Search,
   "map-pin": MapPin,
-  headphones: Headphones,
+  headphones: Headphones
 };
 
-export function Differentials() {
+export function Differentials({ title, differentials }: DifferentialsProps) {
   return (
     <section className="bg-black px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <SectionTitle title={COPY.differentials.title} />
+          <SectionTitle title={title} />
         </FadeIn>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {DIFFERENTIALS.map((item, index) => {
+          {differentials.map((item, index) => {
             const Icon = iconMap[item.icon] ?? Zap;
             return (
-              <FadeIn key={item.title} delay={index * 70}>
+              <FadeIn key={`${item.title}-${index}`} delay={index * 70}>
                 <article className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 text-center sm:text-left">
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#25D366]/15 text-[#25D366] sm:mx-0">
                     <Icon size={24} />

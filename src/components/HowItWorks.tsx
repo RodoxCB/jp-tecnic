@@ -1,21 +1,24 @@
 import { Truck } from "lucide-react";
-import { COPY, STEPS } from "@/lib/constants";
-import { FadeIn } from "./FadeIn";
-import { SectionTitle } from "./SectionTitle";
+import type { SiteContent } from "@/lib/types";
+import { FadeIn } from "@/components/FadeIn";
+import { SectionTitle } from "@/components/SectionTitle";
 
-export function HowItWorks() {
-  const { howItWorks } = COPY;
+type HowItWorksProps = {
+  copy: SiteContent["copy"]["howItWorks"];
+  steps: SiteContent["steps"];
+};
 
+export function HowItWorks({ copy, steps }: HowItWorksProps) {
   return (
     <section id="como-funciona" className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <SectionTitle title={howItWorks.title} subtitle={howItWorks.subtitle} />
+          <SectionTitle title={copy.title} subtitle={copy.subtitle} />
         </FadeIn>
 
         <div className="mt-10 space-y-4">
-          {STEPS.map((item, index) => (
-            <FadeIn key={item.step} delay={index * 80}>
+          {steps.map((item, index) => (
+            <FadeIn key={`${item.title}-${index}`} delay={index * 80}>
               <div className="flex gap-4 rounded-2xl border border-zinc-800 bg-black p-5 sm:items-center sm:gap-6 sm:p-6">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-lg font-bold text-black">
                   {item.step}
@@ -34,7 +37,7 @@ export function HowItWorks() {
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/20 text-[#25D366]">
               <Truck size={24} />
             </div>
-            <p className="text-base font-semibold text-white sm:text-lg">{howItWorks.pickup}</p>
+            <p className="text-base font-semibold text-white sm:text-lg">{copy.pickup}</p>
           </div>
         </FadeIn>
       </div>

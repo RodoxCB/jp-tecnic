@@ -1,20 +1,24 @@
-import { SITE } from "@/lib/constants";
+import type { SiteContent } from "@/lib/types";
 
-export function JsonLd() {
+type JsonLdProps = {
+  content: SiteContent;
+};
+
+export function JsonLd({ content }: JsonLdProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: SITE.name,
+    name: content.site.name,
     description:
       "Conserto de celular em Domingos Martins, Paraju, Marechal Floriano e região.",
-    areaServed: SITE.regions.map((region) => ({
+    areaServed: content.regions.map((region) => ({
       "@type": "City",
-      name: region,
+      name: region
     })),
     url: "https://jp-tecnic.vercel.app",
-    sameAs: [SITE.instagram],
+    sameAs: [content.site.instagram],
     openingHours: "Mo-Sa 08:00-18:00",
-    priceRange: "$$",
+    priceRange: "$$"
   };
 
   return (

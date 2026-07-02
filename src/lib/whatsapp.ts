@@ -1,7 +1,4 @@
-import { SITE } from "./constants";
-
-export function getWhatsAppUrl(customMessage?: string): string {
-  const message = customMessage ?? SITE.whatsappMessage;
+export function getWhatsAppUrl(phone: string, message: string): string {
   const encoded = encodeURIComponent(message);
-  return `https://wa.me/${SITE.whatsappNumber}?text=${encoded}`;
+  return `https://wa.me/${phone}?text=${encoded}`;
 }

@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import type { GalleryItem } from "@/lib/gallery";
+import type { GalleryItem } from "@/lib/types";
 
 type GalleryGridProps = {
   items: GalleryItem[];
+  hoverText: string;
 };
 
-export function GalleryGrid({ items }: GalleryGridProps) {
+export function GalleryGrid({ items, hoverText }: GalleryGridProps) {
   const [active, setActive] = useState<GalleryItem | null>(null);
 
   return (
@@ -28,6 +29,9 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               className="object-cover transition duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, 33vw"
             />
+            <span className="absolute inset-x-0 bottom-0 bg-black/70 px-2 py-1 text-xs text-zinc-200 opacity-0 transition group-hover:opacity-100">
+              {hoverText}
+            </span>
           </button>
         ))}
       </div>
@@ -39,7 +43,7 @@ export function GalleryGrid({ items }: GalleryGridProps) {
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative max-h-[90vh] max-w-lg" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-h-[90vh] max-w-lg" onClick={(event) => event.stopPropagation()}>
             <button
               type="button"
               onClick={() => setActive(null)}
@@ -49,13 +53,7 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               Fechar
             </button>
             <div className="relative aspect-square w-full min-w-[280px]">
-              <Image
-                src={active.url}
-                alt={active.title}
-                fill
-                className="rounded-2xl object-contain"
-                sizes="90vw"
-              />
+              <Image src={active.url} alt={active.title} fill className="rounded-2xl object-contain" sizes="90vw" />
             </div>
             <p className="mt-3 text-center text-sm text-zinc-300">{active.title}</p>
             <a

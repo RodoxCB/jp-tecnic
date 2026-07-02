@@ -2,25 +2,30 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { COPY, FAQ_ITEMS } from "@/lib/constants";
-import { FadeIn } from "./FadeIn";
-import { SectionTitle } from "./SectionTitle";
+import type { SiteContent } from "@/lib/types";
+import { FadeIn } from "@/components/FadeIn";
+import { SectionTitle } from "@/components/SectionTitle";
 
-export function FAQ() {
+type FAQProps = {
+  title: string;
+  items: SiteContent["faq"];
+};
+
+export function FAQ({ title, items }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-3xl">
         <FadeIn>
-          <SectionTitle title={COPY.faq.title} />
+          <SectionTitle title={title} />
         </FadeIn>
 
         <div className="mt-10 space-y-3">
-          {FAQ_ITEMS.map((item, index) => {
+          {items.map((item, index) => {
             const isOpen = openIndex === index;
             return (
-              <FadeIn key={item.question} delay={index * 60}>
+              <FadeIn key={`${item.question}-${index}`} delay={index * 60}>
                 <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-black">
                   <button
                     type="button"
