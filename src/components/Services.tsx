@@ -8,7 +8,7 @@ import {
   Smartphone,
   type LucideIcon,
 } from "lucide-react";
-import { SERVICES } from "@/lib/constants";
+import { COPY, SERVICES } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { SectionTitle } from "./SectionTitle";
 import { WhatsAppButton } from "./WhatsAppButton";
@@ -24,14 +24,13 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export function Services() {
+  const { services } = COPY;
+
   return (
     <section id="servicos" className="bg-black px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <SectionTitle
-            title="Nossos Serviços"
-            subtitle="Conserto de celular em Domingos Martins, Paraju e Marechal Floriano"
-          />
+          <SectionTitle title={services.title} subtitle={services.subtitle} />
         </FadeIn>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -53,11 +52,7 @@ export function Services() {
 
         <FadeIn>
           <div className="mt-10 text-center">
-            <WhatsAppButton
-              label="Solicitar orçamento"
-              size="lg"
-              message="Olá! Vim pelo site da JP Tecnic. Gostaria de solicitar um orçamento para:"
-            />
+            <WhatsAppButton label={services.cta} size="lg" message={services.ctaMessage} />
           </div>
         </FadeIn>
       </div>

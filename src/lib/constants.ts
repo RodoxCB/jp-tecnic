@@ -1,11 +1,11 @@
 export const SITE = {
   name: "JP Tecnic",
-  tagline: "Assistência Técnica de Celulares",
+  tagline: "A gente cuida do seu celular como se fosse nosso",
   instagram: "https://www.instagram.com/jp_tecnic/",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5527997169987",
   whatsappMessage:
-    "Olá! Vim pelo site da JP Tecnic. Meu celular está com o seguinte problema:",
-  schedule: "Seg a Sáb: 8h às 18h",
+    "Oi! Vi o site da JP Tecnic e preciso de uma ajuda. Meu celular está assim:",
+  schedule: "De segunda a sábado, das 8h às 18h",
   regions: [
     "Domingos Martins",
     "Paraju",
@@ -17,76 +17,213 @@ export const SITE = {
 export const NAV_LINKS = [
   { href: "#inicio", label: "Início" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#como-funciona", label: "Como Funciona" },
+  { href: "#como-funciona", label: "Como funciona" },
   { href: "#avaliacoes", label: "Avaliações" },
   { href: "#galeria", label: "Galeria" },
   { href: "#contato", label: "Contato" },
 ] as const;
 
 export const SERVICES = [
-  { icon: "smartphone", title: "Troca de tela", description: "Telas quebradas ou com manchas? Substituímos com peças de qualidade." },
-  { icon: "battery", title: "Troca de bateria", description: "Celular descarregando rápido? Nova bateria e mais autonomia para você." },
-  { icon: "cpu", title: "Reparo em placa", description: "Problemas internos? Diagnóstico preciso e reparo especializado." },
-  { icon: "plug", title: "Problemas de carregamento", description: "Conector, cabo ou placa — identificamos e resolvemos a causa." },
-  { icon: "settings", title: "Formatação e otimização", description: "Sistema lento ou travando? Deixamos seu aparelho mais rápido." },
-  { icon: "shield", title: "Remoção de conta Google (FRP)", description: "Desbloqueio de conta Google com procedimento seguro." },
-  { icon: "apple", title: "Remoção de conta Apple", description: "Sob análise — entre em contato para avaliarmos seu caso." },
+  {
+    icon: "smartphone",
+    title: "Troca de tela",
+    description:
+      "Tela trincada ou com mancha? A gente troca com cuidado e usa peça de qualidade.",
+  },
+  {
+    icon: "battery",
+    title: "Troca de bateria",
+    description:
+      "Celular descarregando rápido demais? Colocamos bateria nova pra você voltar a usar tranquilo.",
+  },
+  {
+    icon: "cpu",
+    title: "Reparo em placa",
+    description:
+      "Problema por dentro do aparelho? Olhamos com calma, explicamos o que achamos e consertamos direitinho.",
+  },
+  {
+    icon: "plug",
+    title: "Problemas de carregamento",
+    description:
+      "Não carrega ou só carrega de um jeito? Descobrimos se é conector, cabo ou placa e resolvemos.",
+  },
+  {
+    icon: "settings",
+    title: "Formatação e otimização",
+    description:
+      "Celular lento ou travando? Deixamos o sistema mais leve pra você usar no dia a dia.",
+  },
+  {
+    icon: "shield",
+    title: "Remoção de conta Google (FRP)",
+    description:
+      "Precisa tirar conta Google do aparelho? Fazemos com segurança e te explicamos cada passo.",
+  },
+  {
+    icon: "apple",
+    title: "Remoção de conta Apple",
+    description:
+      "Cada caso é diferente. Manda mensagem que a gente analisa o seu e te fala o que dá pra fazer.",
+  },
 ] as const;
 
 export const STEPS = [
-  { step: 1, title: "Você entra em contato pelo WhatsApp", description: "Mande uma mensagem contando o que aconteceu com seu celular." },
-  { step: 2, title: "Explica o problema do seu celular", description: "Descreva os sintomas — quanto mais detalhes, melhor o diagnóstico." },
-  { step: 3, title: "Recebe diagnóstico com valor e prazo", description: "Orçamento claro, sem surpresas. Você decide se aprova ou não." },
-  { step: 4, title: "O serviço é realizado com transparência", description: "Acompanhamos você em cada etapa do conserto." },
-  { step: 5, title: "Entrega com garantia", description: "Aparelho pronto e garantia no serviço realizado." },
+  {
+    step: 1,
+    title: "Você chama a gente no WhatsApp",
+    description: "É só mandar uma mensagem contando o que aconteceu. Simples assim.",
+  },
+  {
+    step: 2,
+    title: "Conta o que está acontecendo",
+    description: "Quanto mais você explicar, mais fácil fica pra gente entender o problema.",
+  },
+  {
+    step: 3,
+    title: "Recebe valor e prazo na hora",
+    description: "Passamos o orçamento sem enrolação. Você decide se quer seguir ou não.",
+  },
+  {
+    step: 4,
+    title: "Fazemos o serviço com transparência",
+    description: "Você fica sabendo o que estamos fazendo. Sem surpresa no meio do caminho.",
+  },
+  {
+    step: 5,
+    title: "Entrega pronta e com garantia",
+    description: "Seu celular volta pra você funcionando, com garantia no que foi feito.",
+  },
 ] as const;
 
 export const DIFFERENTIALS = [
-  { icon: "zap", title: "Atendimento rápido", description: "Resposta ágil e prazos realistas para você não ficar sem celular." },
-  { icon: "badge-dollar-sign", title: "Preço justo", description: "Orçamento transparente, sem taxas escondidas." },
-  { icon: "search", title: "Transparência no diagnóstico", description: "Explicamos o problema e a solução antes de qualquer reparo." },
-  { icon: "map-pin", title: "Atendimento local", description: "Atendemos Domingos Martins, Paraju, Marechal Floriano e região." },
-  { icon: "headphones", title: "Suporte pós-serviço", description: "Dúvidas depois do conserto? Estamos aqui para ajudar." },
+  {
+    icon: "zap",
+    title: "Resposta rápida",
+    description: "A gente responde logo e combina prazo realista pra você não ficar no escuro.",
+  },
+  {
+    icon: "badge-dollar-sign",
+    title: "Preço justo",
+    description: "Orçamento claro desde o começo. Sem taxa escondida nem conversa torta.",
+  },
+  {
+    icon: "search",
+    title: "Diagnóstico honesto",
+    description: "Explicamos o problema e a solução antes de mexer no aparelho.",
+  },
+  {
+    icon: "map-pin",
+    title: "Atendimento da região",
+    description: "Somos daqui. Atendemos Domingos Martins, Paraju, Marechal Floriano e redondezas.",
+  },
+  {
+    icon: "headphones",
+    title: "Suporte depois do conserto",
+    description: "Ficou com dúvida depois que pegou o celular? Pode chamar que a gente ajuda.",
+  },
 ] as const;
 
 export const REVIEWS = [
   {
     name: "Carlos M.",
     location: "Domingos Martins",
-    text: "Troquei a tela do meu Samsung e ficou perfeito. Atendimento rápido e preço justo. Recomendo demais!",
+    text: "Levei meu Samsung com a tela toda quebrada e voltou perfeito. Atenderam rápido, preço honesto. Indico de olhos fechados.",
   },
   {
     name: "Fernanda S.",
     location: "Paraju",
-    text: "Meu celular não carregava mais. Diagnosticaram na hora e consertaram no mesmo dia. Muito profissionais.",
+    text: "Meu celular não carregava mais. Olharam na hora, explicaram tudo e consertaram no mesmo dia. Gente muito gente boa.",
   },
   {
     name: "Ricardo L.",
     location: "Marechal Floriano",
-    text: "Transparentes do início ao fim. Explicaram tudo antes de começar o serviço. Voltarei com certeza.",
+    text: "Gostei porque falam a verdade. Mostraram o problema antes de começar e cumpriram o prazo. Com certeza volto.",
   },
 ] as const;
 
 export const FAQ_ITEMS = [
   {
-    question: "Quanto tempo leva o conserto?",
-    answer: "Depende do problema. Troca de tela e bateria costumam ser no mesmo dia. Reparos em placa podem levar de 1 a 3 dias úteis. Informamos o prazo no orçamento.",
+    question: "Quanto tempo demora o conserto?",
+    answer:
+      "Depende do que precisa ser feito. Troca de tela e bateria, na maioria das vezes, fica pronta no mesmo dia. Reparo em placa pode levar de 1 a 3 dias úteis. A gente te avisa o prazo certinho no orçamento.",
   },
   {
     question: "Tem garantia?",
-    answer: "Sim! Todos os serviços têm garantia. O prazo varia conforme o tipo de reparo e informamos na hora da entrega.",
+    answer:
+      "Tem sim! Todo serviço sai com garantia. O tempo varia conforme o tipo de conserto e a gente te explica na entrega.",
   },
   {
-    question: "Precisa agendar?",
-    answer: "Não é obrigatório, mas recomendamos chamar no WhatsApp antes para confirmar disponibilidade e agilizar o atendimento.",
+    question: "Precisa marcar horário?",
+    answer:
+      "Não precisa, mas é bom mandar mensagem antes. Assim a gente confirma disponibilidade e já te atende mais rápido.",
   },
   {
-    question: "Quais marcas atendem?",
-    answer: "Atendemos as principais marcas: Samsung, Motorola, Xiaomi, Apple, LG e outras. Consulte-nos pelo WhatsApp.",
+    question: "Quais marcas vocês consertam?",
+    answer:
+      "Samsung, Motorola, Xiaomi, Apple, LG e outras. Se tiver dúvida sobre o seu modelo, manda no WhatsApp que a gente confirma.",
   },
   {
-    question: "Faz retirada e entrega?",
-    answer: "Sim! Podemos buscar o aparelho na sua região ou você pode entregar diretamente. Combine pelo WhatsApp.",
+    question: "Vocês buscam e entregam o aparelho?",
+    answer:
+      "Sim! A gente pode buscar na sua região ou você traz aqui. Combina com a gente pelo WhatsApp o jeito que ficar melhor.",
   },
 ] as const;
 
+export const COPY = {
+  hero: {
+    badge: "Atendemos a região com agilidade",
+    title: "Conserto de celular",
+    titleHighlight: "rápido e de confiança",
+    subtitle: "Atendemos Domingos Martins, Paraju, Marechal Floriano e redondezas",
+    complement: "Tela trincada, bateria fraca ou celular lento? Manda mensagem que a gente resolve junto com você.",
+    ctaGallery: "Ver trabalhos realizados",
+    trust1: "Garantia em todo serviço",
+    trust2: "Orçamento grátis, sem compromisso",
+  },
+  gallery: {
+    title: "Trabalhos que já fizemos",
+    subtitle: "Alguns aparelhos de clientes da região que passaram por aqui",
+    fallback:
+      "Não deu pra carregar as fotos agora. Acessa nosso Instagram que lá tem vários serviços realizados.",
+    instagramCta: "Ver mais no Instagram",
+    hover: "Ver no Instagram",
+  },
+  services: {
+    title: "O que a gente faz",
+    subtitle: "Conserto de celular em Domingos Martins, Paraju, Marechal Floriano e região",
+    cta: "Pedir orçamento",
+    ctaMessage: "Oi! Vi o site da JP Tecnic e gostaria de um orçamento para:",
+  },
+  howItWorks: {
+    title: "Como funciona",
+    subtitle: "Sem complicação: do primeiro contato até a entrega",
+    pickup:
+      "Se preferir, a gente busca o aparelho aí. Ou você traz aqui. O importante é ficar fácil pra você.",
+  },
+  differentials: {
+    title: "Por que a galera confia na gente",
+  },
+  reviews: {
+    title: "Quem já usou, recomenda",
+    subtitle: "Opinião de quem já deixou o celular com a JP Tecnic",
+  },
+  region: {
+    title: "Onde a gente atende",
+    subtitle: "Assistência de celular pertinho de você",
+  },
+  faq: {
+    title: "Dúvidas frequentes",
+  },
+  finalCta: {
+    title: "Celular deu problema?",
+    subtitle: "Chama no WhatsApp agora que a gente te orienta",
+  },
+  footer: {
+    regions: "Onde atendemos",
+    contact: "Fala com a gente",
+    schedule: "Horário de atendimento",
+    copyright:
+      "Assistência técnica de celular em Domingos Martins, Paraju e Marechal Floriano.",
+  },
+} as const;

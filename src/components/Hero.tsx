@@ -1,8 +1,11 @@
 import { ChevronDown, ShieldCheck, Zap } from "lucide-react";
+import { COPY } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Hero() {
+  const { hero } = COPY;
+
   return (
     <section
       id="inicio"
@@ -14,27 +17,23 @@ export function Hero() {
         <FadeIn>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#25D366]/30 bg-[#25D366]/10 px-4 py-1.5 text-sm text-[#25D366]">
             <Zap size={16} />
-            Atendimento rápido na região
+            {hero.badge}
           </div>
         </FadeIn>
 
         <FadeIn delay={100}>
           <h1 className="max-w-3xl text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            Assistência Técnica de Celulares{" "}
-            <span className="text-[#25D366]">Rápida e de Confiança</span>
+            {hero.title}{" "}
+            <span className="text-[#25D366]">{hero.titleHighlight}</span>
           </h1>
         </FadeIn>
 
         <FadeIn delay={200}>
-          <p className="mt-4 max-w-2xl text-lg text-zinc-300 sm:text-xl">
-            Atendimento em Domingos Martins, Paraju, Marechal Floriano e região
-          </p>
+          <p className="mt-4 max-w-2xl text-lg text-zinc-300 sm:text-xl">{hero.subtitle}</p>
         </FadeIn>
 
         <FadeIn delay={300}>
-          <p className="mt-3 max-w-xl text-base text-zinc-400">
-            Tela quebrada? Bateria ruim? Problemas no sistema? A gente resolve.
-          </p>
+          <p className="mt-3 max-w-xl text-base text-zinc-400">{hero.complement}</p>
         </FadeIn>
 
         <FadeIn delay={400}>
@@ -44,7 +43,7 @@ export function Hero() {
               href="#galeria"
               className="inline-flex items-center justify-center rounded-xl border border-zinc-700 bg-zinc-900 px-8 py-4 text-lg font-semibold text-white transition hover:border-[#25D366]/50 hover:bg-zinc-800"
             >
-              Ver serviços realizados
+              {hero.ctaGallery}
             </a>
           </div>
         </FadeIn>
@@ -53,11 +52,11 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap gap-4 text-sm text-zinc-400">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck size={16} className="text-[#25D366]" />
-              Garantia nos serviços
+              {hero.trust1}
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Zap size={16} className="text-[#25D366]" />
-              Orçamento sem compromisso
+              {hero.trust2}
             </span>
           </div>
         </FadeIn>

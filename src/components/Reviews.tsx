@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { REVIEWS } from "@/lib/constants";
+import { COPY, REVIEWS } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { SectionTitle } from "./SectionTitle";
 
@@ -14,14 +14,13 @@ function Stars() {
 }
 
 export function Reviews() {
+  const { reviews } = COPY;
+
   return (
     <section id="avaliacoes" className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <SectionTitle
-            title="O que nossos clientes dizem"
-            subtitle="Avaliações de quem já confiou na JP Tecnic"
-          />
+          <SectionTitle title={reviews.title} subtitle={reviews.subtitle} />
         </FadeIn>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">

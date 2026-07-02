@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JP Tecnic | Assistência Técnica de Celular em Domingos Martins",
+  title: "JP Tecnic | Conserto de celular em Domingos Martins",
   description:
-    "Assistência técnica de celular em Domingos Martins, Paraju e Marechal Floriano. Troca de tela, bateria, reparo em placa e mais. Orçamento pelo WhatsApp.",
+    "Conserto de celular em Domingos Martins, Paraju e Marechal Floriano. Troca de tela, bateria, placa e muito mais. Chama no WhatsApp que a gente te ajuda.",
   keywords: [
     "assistência técnica de celular em Domingos Martins",
     "conserto de celular Paraju",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "troca de bateria celular",
   ],
   openGraph: {
-    title: "JP Tecnic | Assistência Técnica de Celulares",
+    title: "JP Tecnic | Conserto de celular com confiança",
     description:
-      "Conserto de celular rápido e de confiança. Atendimento em Domingos Martins, Paraju, Marechal Floriano e região.",
+      "A gente conserta seu celular com rapidez e transparência. Atendemos Domingos Martins, Paraju, Marechal Floriano e região.",
     locale: "pt_BR",
     type: "website",
   },

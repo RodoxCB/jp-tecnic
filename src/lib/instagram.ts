@@ -21,7 +21,7 @@ const REVALIDATE_SECONDS = 3600;
 
 function getCaption(node: InstagramNode): string {
   const fromCaption = node.edge_media_to_caption?.edges[0]?.node.text;
-  return node.accessibility_caption ?? fromCaption ?? "Serviço realizado pela JP Tecnic";
+  return node.accessibility_caption ?? fromCaption ?? "Trabalho feito pela JP Tecnic";
 }
 
 function collectImagesFromNode(node: InstagramNode): InstagramMedia[] {

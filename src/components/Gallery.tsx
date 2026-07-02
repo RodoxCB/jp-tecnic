@@ -1,20 +1,18 @@
 import { Instagram } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { COPY, SITE } from "@/lib/constants";
 import { fetchInstagramPosts } from "@/lib/instagram";
 import { FadeIn } from "./FadeIn";
 import { SectionTitle } from "./SectionTitle";
 
 export async function Gallery() {
   const images = await fetchInstagramPosts(12);
+  const { gallery } = COPY;
 
   return (
     <section id="galeria" className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <SectionTitle
-            title="Serviços reais realizados"
-            subtitle="Veja alguns dos aparelhos que já passaram por aqui"
-          />
+          <SectionTitle title={gallery.title} subtitle={gallery.subtitle} />
         </FadeIn>
 
         {images.length > 0 ? (
@@ -36,7 +34,7 @@ export async function Gallery() {
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/10 to-transparent p-3 opacity-0 transition group-hover:opacity-100">
-                    <span className="text-xs font-medium text-white sm:text-sm">Ver no Instagram</span>
+                    <span className="text-xs font-medium text-white sm:text-sm">{gallery.hover}</span>
                   </div>
                 </a>
               </FadeIn>
@@ -44,10 +42,7 @@ export async function Gallery() {
           </div>
         ) : (
           <FadeIn>
-            <p className="mt-10 text-center text-zinc-400">
-              Não foi possível carregar as fotos agora. Acesse nosso Instagram para ver os serviços
-              realizados.
-            </p>
+            <p className="mt-10 text-center text-zinc-400">{gallery.fallback}</p>
           </FadeIn>
         )}
 
@@ -60,7 +55,7 @@ export async function Gallery() {
               className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900 px-6 py-3 font-semibold text-white transition hover:border-[#25D366]/50 hover:text-[#25D366]"
             >
               <Instagram size={20} />
-              Ver mais no Instagram
+              {gallery.instagramCta}
             </a>
           </div>
         </FadeIn>

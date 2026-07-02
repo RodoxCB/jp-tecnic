@@ -6,7 +6,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import { DIFFERENTIALS } from "@/lib/constants";
+import { COPY, DIFFERENTIALS } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { SectionTitle } from "./SectionTitle";
 
@@ -23,7 +23,7 @@ export function Differentials() {
     <section className="bg-black px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <SectionTitle title="Por que escolher a JP Tecnic?" />
+          <SectionTitle title={COPY.differentials.title} />
         </FadeIn>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

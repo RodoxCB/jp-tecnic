@@ -1,17 +1,16 @@
 import { Truck } from "lucide-react";
-import { STEPS } from "@/lib/constants";
+import { COPY, STEPS } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { SectionTitle } from "./SectionTitle";
 
 export function HowItWorks() {
+  const { howItWorks } = COPY;
+
   return (
     <section id="como-funciona" className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <SectionTitle
-            title="Como Funciona"
-            subtitle="Simples, rápido e transparente do início ao fim"
-          />
+          <SectionTitle title={howItWorks.title} subtitle={howItWorks.subtitle} />
         </FadeIn>
 
         <div className="mt-10 space-y-4">
@@ -35,9 +34,7 @@ export function HowItWorks() {
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/20 text-[#25D366]">
               <Truck size={24} />
             </div>
-            <p className="text-base font-semibold text-white sm:text-lg">
-              Podemos ir buscar o aparelho ou você pode entregar diretamente para nós
-            </p>
+            <p className="text-base font-semibold text-white sm:text-lg">{howItWorks.pickup}</p>
           </div>
         </FadeIn>
       </div>

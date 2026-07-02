@@ -6,7 +6,7 @@ export function JsonLd() {
     "@type": "LocalBusiness",
     name: SITE.name,
     description:
-      "Assistência técnica de celular em Domingos Martins, Paraju, Marechal Floriano e região.",
+      "Conserto de celular em Domingos Martins, Paraju, Marechal Floriano e região.",
     areaServed: SITE.regions.map((region) => ({
       "@type": "City",
       name: region,

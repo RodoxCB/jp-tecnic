@@ -1,8 +1,10 @@
 import { Clock, Instagram, MessageCircle } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { COPY, SITE } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Footer() {
+  const { footer } = COPY;
+
   return (
     <footer className="border-t border-zinc-800 bg-zinc-950 px-4 py-12 sm:px-6">
       <div className="mx-auto max-w-6xl">
@@ -13,7 +15,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-semibold text-white">Região atendida</p>
+            <p className="font-semibold text-white">{footer.regions}</p>
             <ul className="mt-3 space-y-1 text-sm text-zinc-400">
               {SITE.regions.map((region) => (
                 <li key={region}>{region}</li>
@@ -22,7 +24,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-semibold text-white">Contato</p>
+            <p className="font-semibold text-white">{footer.contact}</p>
             <ul className="mt-3 space-y-2">
               <li>
                 <a
@@ -50,7 +52,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-semibold text-white">Horário</p>
+            <p className="font-semibold text-white">{footer.schedule}</p>
             <p className="mt-3 inline-flex items-center gap-2 text-sm text-zinc-400">
               <Clock size={16} className="text-[#25D366]" />
               {SITE.schedule}
@@ -60,8 +62,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-zinc-800 pt-6 text-center text-sm text-zinc-500">
           <p>
-            &copy; {new Date().getFullYear()} {SITE.name}. Assistência técnica de celular em
-            Domingos Martins, Paraju e Marechal Floriano.
+            &copy; {new Date().getFullYear()} {SITE.name}. {footer.copyright}
           </p>
         </div>
       </div>
