@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 type AdminLoginProps = {
+  siteName: string;
   onLogin: () => void;
 };
 
-export function AdminLogin({ onLogin }: AdminLoginProps) {
+export function AdminLogin({ siteName, onLogin }: AdminLoginProps) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -37,7 +38,7 @@ export function AdminLogin({ onLogin }: AdminLoginProps) {
         onSubmit={handleSubmit}
         className="w-full max-w-sm rounded-2xl border border-zinc-800 bg-zinc-950 p-8 shadow-2xl"
       >
-        <h1 className="text-2xl font-bold text-white">Painel JP Tecnic</h1>
+        <h1 className="text-2xl font-bold text-white">Painel {siteName}</h1>
         <p className="mt-2 text-sm text-zinc-400">Acesso restrito para administração do site.</p>
 
         <label className="mt-6 block">

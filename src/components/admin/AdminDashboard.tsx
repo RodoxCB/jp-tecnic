@@ -155,7 +155,7 @@ export function AdminDashboard({ initialContent }: AdminDashboardProps) {
     const item: DifferentialItem = {
       icon: "zap",
       title: "Novo diferencial",
-      description: "Explique o diferencial da JP Tecnic."
+      description: "Explique o diferencial da JP Assistência Técnica."
     };
 
     updateArray("differentials", [...content.differentials, item]);
@@ -203,7 +203,9 @@ export function AdminDashboard({ initialContent }: AdminDashboardProps) {
         <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h1 className="text-xl font-bold text-white sm:text-2xl">Painel administrativo JP Tecnic</h1>
+              <h1 className="text-xl font-bold text-white sm:text-2xl">
+                Painel administrativo {content.site.name}
+              </h1>
               <p className="mt-1 text-sm text-zinc-400">Edite textos, galeria e aparelhos da loja.</p>
             </div>
             <div className="flex shrink-0 gap-2">

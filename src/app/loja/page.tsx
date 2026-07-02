@@ -1,12 +1,17 @@
+import type { Metadata } from "next";
 import { LojaClient } from "@/components/loja/LojaClient";
 import { getContent } from "@/lib/content";
 import { getActivePhones } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
-  title: "Loja | JP Tecnic"
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContent();
+
+  return {
+    title: `Loja | ${content.site.name}`
+  };
+}
 
 export default async function LojaPage() {
   const content = await getContent();

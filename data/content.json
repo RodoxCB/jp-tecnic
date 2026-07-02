@@ -1,13 +1,13 @@
 {
   "site": {
-    "name": "JP Tecnic",
+    "name": "JP Assistência Técnica",
     "tagline": "A gente cuida do seu celular como se fosse nosso",
     "instagram": "https://www.instagram.com/jp_tecnic/",
     "schedule": "De segunda a sábado, das 8h às 18h"
   },
   "contact": {
     "whatsappNumber": "5527997169987",
-    "whatsappMessage": "Oi! Vi o site da JP Tecnic e preciso de uma ajuda. Meu celular está assim:",
+    "whatsappMessage": "Oi! Vi o site da JP Assistência Técnica e preciso de uma ajuda. Meu celular está assim:",
     "phoneDisplay": "(27) 99716-9987"
   },
   "navLinks": [
@@ -171,7 +171,7 @@
       "title": "O que a gente faz",
       "subtitle": "Conserto de celular em Domingos Martins, Paraju, Marechal Floriano e região",
       "cta": "Pedir orçamento",
-      "ctaMessage": "Oi! Vi o site da JP Tecnic e gostaria de um orçamento para:"
+      "ctaMessage": "Oi! Vi o site da JP Assistência Técnica e gostaria de um orçamento para:"
     },
     "howItWorks": {
       "title": "Como funciona",
@@ -183,7 +183,7 @@
     },
     "reviews": {
       "title": "Quem já usou, recomenda",
-      "subtitle": "Opinião de quem já deixou o celular com a JP Tecnic"
+      "subtitle": "Opinião de quem já deixou o celular com a JP Assistência Técnica"
     },
     "region": {
       "title": "Onde a gente atende",
@@ -203,7 +203,7 @@
       "copyright": "Assistência técnica de celular em Domingos Martins, Paraju e Marechal Floriano."
     },
     "loja": {
-      "title": "Celulares à venda na JP Tecnic",
+      "title": "Celulares à venda na JP Assistência Técnica",
       "subtitle": "Aparelhos revisados e prontos para uso. Compra e negociação só pelo WhatsApp.",
       "empty": "Nenhum aparelho encontrado nesse filtro no momento.",
       "cta": "Comprar via WhatsApp"

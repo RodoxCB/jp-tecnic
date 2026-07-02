@@ -14,7 +14,7 @@ export function AdminClient({ authenticated, initialContent }: AdminClientProps)
   const [loggedIn, setLoggedIn] = useState(authenticated);
 
   if (!loggedIn) {
-    return <AdminLogin onLogin={() => setLoggedIn(true)} />;
+    return <AdminLogin siteName={initialContent.site.name} onLogin={() => setLoggedIn(true)} />;
   }
 
   return <AdminDashboard initialContent={initialContent} />;

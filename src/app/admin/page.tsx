@@ -1,13 +1,18 @@
+import type { Metadata } from "next";
 import { AdminClient } from "@/components/admin/AdminClient";
 import { isAdminAuthenticated } from "@/lib/auth";
 import { getContent } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
-  title: "Admin | JP Tecnic",
-  robots: { index: false, follow: false }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContent();
+
+  return {
+    title: `Admin | ${content.site.name}`,
+    robots: { index: false, follow: false }
+  };
+}
 
 export default async function AdminPage() {
   const authenticated = await isAdminAuthenticated();

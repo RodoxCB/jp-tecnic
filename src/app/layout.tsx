@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "assistência técnica de celular em Domingos Martins",
       "conserto de celular Paraju",
       "troca de tela Marechal Floriano",
-      "JP Tecnic",
+      "JP Assistência Técnica",
       "reparo de celular ES",
       "troca de bateria celular"
     ],
