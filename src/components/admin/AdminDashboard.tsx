@@ -79,7 +79,10 @@ export function AdminDashboard({ initialContent }: AdminDashboardProps) {
     });
 
     setSaving(false);
-    setMessage(response.ok ? "Alterações salvas com sucesso." : "Não foi possível salvar agora.");
+    const data = (await response.json().catch(() => ({}))) as { error?: string };
+    setMessage(
+      response.ok ? "Alterações salvas com sucesso." : data.error ?? "Não foi possível salvar agora."
+    );
   }
 
   async function logout() {
